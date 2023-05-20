@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>Home</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   
+   
+   <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js}" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+   <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js}" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <!-- bootstrap css -->
+   
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   
+   <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+   <!-- style css -->
+   <link rel="stylesheet" th:href="@{css/style.css}" />
+   <!-- Responsive-->
+   <link rel="stylesheet" th:href="@{css/responsive.css}" />
+   <!-- fevicon -->
+   <link rel="icon" th:href="@{images/fevicon.png}" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" th:href="@{css/jquery.mCustomScrollbar.min.css}" />
+   <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+   
+   <!-- owl stylesheets -->
+      <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}" />
+      <link rel="stylesheet" th:href="@{css/owl.theme.default.min.css}" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
+   
+   
+</head>
+
+<body>
+   <!-- header section start -->
+   <div class="header_section">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="logo"><a href="index.html"><img th:src="@{images/logo.png}" width="200" height="200"></a></div>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="health.html">Health</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="medicine.html">Medicine</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="register.html">Register</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="client.html">Client</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" th:href="@{contact.html}">Contact</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#"><img th:src="@{images/search-icon.png}"></a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <!-- header section end -->
+      <!-- banner section start -->
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="banner_section">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <h1 class="banner_taital">Soins<br><span style="color: #151515;"> de santé</span></h1>
+                           <p class="banner_text">Prendre rendez-vous avec votre médecin</p>
+                           <div class="btn_main">
+                              <div class="more_bt"><a href="#">Reserver</a></div>
+                              <div class="contact_bt"><a href="#">Apprendre Plus </a></div>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="image_1"><img th:src="@{images/img-1.png}"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="banner_section">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <h1 class="banner_taital">Health <br><span style="color: #151515;">Care</span></h1>
+                           <p class="banner_text">There are many variations of passages of Lorem Ipsum</p>
+                           <div class="btn_main">
+                              <div class="more_bt"><a href="#">Contact Now</a></div>
+                              <div class="contact_bt"><a href="#">Get A Quote</a></div>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="image_1"><img th:src="@{/images/img-1.png}"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="banner_section">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <h1 class="banner_taital">Health <br><span style="color: #151515;">Care</span></h1>
+                           <p class="banner_text">There are many variations of passages of Lorem Ipsum</p>
+                           <div class="btn_main">
+                              <div class="more_bt"><a href="#">Contact Now</a></div>
+                              <div class="contact_bt"><a href="#">Get A Quote</a></div>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="image_1"><img th:src="@{images/img-1.png}"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <i class="fa fa-long-arrow-left" style="font-size:24px; padding-top: 4px;"></i>
+         </a>
+         <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <i class="fa fa-long-arrow-right" style="font-size:24px; padding-top: 4px;"></i>
+         </a>
+      </div>
+   </div>
+   <!-- banner section end -->
+   <!-- health section start -->
+   <div class="health_section layout_padding">
+      <div class="container">
+         <h1 class="health_taital">Le meilleur des soins de santé pour vous</h1>
+         <p class="health_text">Prenez rendez-vous avec votre médecin et vérifiez votre état de santé rapidement et facilement .</p>
+         <div class="health_section layout_padding">
+            <div class="row">
+               <div class="col-sm-7">
+                  <div class="image_main">
+                     <div class="main">
+                        <img th:src="@{images/img-2.png}" alt="Avatar" class="image" style="width:100%">
+                     </div>
+                     <div class="middle">
+                        <div class="text"><img th:src="@{images/icon-1.png}" style="width: 40px;"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-5">
+                  <div class="image_main_1">
+                     <div class="main">
+                        <img th:src="@{images/img-3.png}" alt="Avatar" class="image" style="width:100%">
+                     </div>
+                     <div class="middle">
+                        <div class="text"><img th:src="@{images/icon-1.png}" style="width: 40px;"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="getquote_bt_1"><a href="#">En savoir plus <span><img th:src="@{images/right-arrow.png}"></span></a></div>
+         </div>
+      </div>
+   </div>
+   <!-- health section end -->
+   <!-- knowledge section end -->
+   <div class="knowledge_section layout_padding">
+      <div class="container">
+         <div class="knowledge_main">
+            <div class="left_main">
+               <h1 class="knowledge_taital">Knowledge of center</h1>
+               <p class="knowledge_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+            <div class="right_main">
+               <div class="play_icon"><a href="#"><img th:src="@{images/play-icon.png}"></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- knowledge section end -->
+   <!-- news section start -->
+   <div class="news_section layout_padding">
+      <div class="container">
+         <h1 class="health_taital">Pourquoi nous choisir</h1>
+         <div class="news_section_2 layout_padding">
+            <div class="row">
+               <div class="col-lg-4 col-sm-6">
+                  <div class="box_main">
+                     <div class="icon_1"><img th:src="@{images/icon-2.png}"></div>
+                     <h4 class="daily_text">Experts en soins quotidiens</h4>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-6">
+                  <div class="box_main active">
+                     <div class="icon_1"><img th:src="@{images/icon-3.png}"></div>
+                     <h4 class="daily_text_1">Disponible 24/7</h4>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-6">
+                  <div class="box_main">
+                     <div class="icon_1"><img th:src="@{images/icon-4.png}"></div>
+                     <h4 class="daily_text_1">Soins équilibrés</h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="getquote_bt"><a href="#">En savoir plus <span><img th:src="@{images/right-arrow.png}"></span></a></div>
+      </div>
+   </div>
+   <!-- news section end -->
+   <!-- contact section start -->
+   <div class="contact_section layout_padding">
+      <div class="container">
+         <h1 class="contact_taital">Ce que nous faisons</h1>
+         <div class="news_section_2">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="icon_main">
+                     <div class="icon_7"><img th:src="@{images/icon-7.png}"></div>
+                     <h4 class="diabetes_text">Consultation sur le diabète et l'obésité </h4>
+                  </div>
+                  <div class="icon_main">
+                     <div class="icon_7"><img th:src="@{images/icon-5.png}"></div>
+                     <h4 class="diabetes_text">Obstétrique et gynécologie</h4>
+                  </div>
+                  <div class="icon_main">
+                     <div class="icon_7"><img th:src="@{mages/icon-6.png}"></div>
+                     <h4 class="diabetes_text">Oncologie chirurgicale et médicale</h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         
+
+      </div>
+   </div>
+   <!-- contact section end -->
+   <!-- client section start -->
+   <div class="client_section layout_padding">
+      <div id="my_slider" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="container">
+                  <h1 class="client_taital">Ce que les gens disent</h1>
+                  <div class="client_section_2">
+                     <div class="client_left">
+                        <div><img th:src="@{images/client-img.png}" class="client_img"></div>
+                     </div>
+                     <div class="client_right">
+                        <h3 class="distracted_text">Client</h3>
+                        <p class="lorem_text">"J'ai récemment découvert une fantastique application de rendez-vous médicaux qui a facilité la gestion de mes besoins en matière de soins de santé ! Cette application a vraiment transformé la façon dont je planifie et fais le suivi de mes rendez-vous médicaux "</p>
+                        <div class="quote_icon"><img th:src="@{images/quote-icon.png}"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <h1 class="client_taital">Ce que les gens disent</h1>
+                  <div class="client_section_2">
+                     <div class="client_left">
+                        <div><img th:src="@{images/client1-img.png}" class="client_img"></div>
+                     </div>
+                     <div class="client_right">
+                        <h3 class="distracted_text">Client</h3>
+                        <p class="lorem_text">" Prendre des rendez-vous n'a jamais été aussi facile. En quelques clics, je pouvais sélectionner une date et une heure appropriées. L'application m'a même envoyé des rappels avant mes rendez-vous, m'assurant de ne manquer aucune visite médicale importante "</p>
+                        <div class="quote_icon"><img th:src="@{images/quote-icon.png}"></div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <h1 class="client_taital">Ce que les gens disent</h1>
+                  <div class="client_section_2">
+                     <div class="client_left">
+                        <div><img th:src="@{images/client2-img.png}" class="client_img"></div>
+                     </div>
+                     <div class="client_right">
+                        <h3 class="distracted_text">Client</h3>
+                        <p class="lorem_text">"Ce qui m'a le plus impressionné, c'est la vaste base de données de professionnels de la santé de l'application. Que j'aie besoin d'un médecin de soins primaires ou d'un spécialiste, l'application propose un large éventail d'options. J'ai apprécié les filtres de recherche qui m'ont permis de trouver le fournisseur de soins de santé idéal en fonction de l'emplacement, de la spécialité et de la disponibilité "</p>
+                        <div class="quote_icon"><img th:src="@{images/quote-icon.png}"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+            <i class="fa fa-long-arrow-left" style="font-size:24px; padding-top: 4px;"></i>
+         </a>
+         <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+            <i class="fa fa-long-arrow-right" style="font-size:24px; padding-top: 4px;"></i>
+         </a>
+      </div>
+   </div>
+   <!-- client section end -->
+   <!-- footer section start -->
+   <div class="footer_section layout_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-sm-6">
+               <div class="footer_logo"><a href="index.html"><img th:src="@{images/footer-logo.png}"></a></div>
+               <h1 class="adderss_text">Contactez-nous</h1>
+               <div class="map_icon"><img th:src="@{images/map-icon.png}"><span class="paddlin_left_0">Synalex</span></div>
+               <div class="map_icon"><img th:src="@{images/call-icon.png}"><span class="paddlin_left_0">+7586656566</span></div>
+               <div class="map_icon"><img th:src="@{images/mail-icon.png}"><span class="paddlin_left_0">synalex@gmail.com</span></div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="adderss_text">Médecins</h1>
+               <div class="hiphop_text_1">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,</div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="adderss_text">Liens utiles</h1>
+               <div class="Useful_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered ,</div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+               <h1 class="adderss_text">Newsletter</h1>
+               <input type="text" class="Enter_text" placeholder="Entrer votre Email" name="Entrer votre Email">
+               <div class="subscribe_bt"><a href="#">S'abonner</a></div>
+               <div class="social_icon">
+                  <ul>
+                     <li><a href="#"><img th:src="@{images/fb-icon.png}"></a></li>
+                     <li><a href="#"><img th:src="@{images/twitter-icon.png}"></a></li>
+                     <li><a href="#"><img th:src="@{images/linkedin-icon.png}"></a></li>
+                     <li><a href="#"><img th:src="@{images/instagram-icon.png"}></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- footer section end -->
+   <!-- copyright section start -->
+   <div class="copyright_section">
+      <div class="container">
+         <p class="copyright_text">2023 All Rights Reserved .</p>
+      </div>
+   </div>
+   <!-- copyright section end -->
+   <!-- Javascript files-->
+   <script th:src="@{js/jquery.min.js}"></script>
+   <script th:src="@{js/popper.min.js}"></script>
+   <script th:src="@{js/bootstrap.bundle.min.js}"></script>
+   <script th:src="@{js/jquery-3.0.0.min.js}"></script>
+   <script th:src="@{js/plugin.js}"></script>
+   <!-- sidebar -->
+   <script th:src="@{js/jquery.mCustomScrollbar.concat.min.js}"></script>
+   <script th:src="@{js/custom.js}"></script>
+   <!-- javascript -->
+   <script th:src="@{js/owl.carousel.js}"></script>
+   <script th:src="@{https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js}"></script>
+</body>
+
+</html>

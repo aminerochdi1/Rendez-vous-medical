@@ -1,0 +1,3 @@
+ netstat -ano | findstr *<port used>*
+
+ taskkill /F /PID *<pid>*
