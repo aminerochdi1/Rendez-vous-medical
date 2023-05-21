@@ -6,9 +6,6 @@ import jakarta.persistence.Column;
 
 public class UtilisateurRegistration {
 
-
-	
-	
 	public UtilisateurRegistration(String nom, String prenom, Date dateN, String userAdresse, String email,
 			String mDP) {
 		super();

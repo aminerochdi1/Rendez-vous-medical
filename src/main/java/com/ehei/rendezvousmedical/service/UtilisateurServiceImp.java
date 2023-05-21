@@ -10,6 +10,8 @@ import com.ehei.rendezvousmedical.model.Utilisateur;
 import com.ehei.rendezvousmedical.repository.UtilisateurRepo;
 import com.ehei.rendezvousmedical.web.dto.UtilisateurRegistration;
 
+import jakarta.transaction.Transactional;
+
 
 @Service
 public class UtilisateurServiceImp implements UtilisateurService {
@@ -19,15 +21,17 @@ public class UtilisateurServiceImp implements UtilisateurService {
 	private UtilisateurRepo utilisateurRepo;
 	
 	
+		/*
 	public UtilisateurServiceImp(UtilisateurRepo utilisateurRepo) {
 		super();
 		this.utilisateurRepo = utilisateurRepo;
 	}
-
+*/
 
    // METHOD D'AJOUT UN UTILISATEUR A LA BD
 	
 	@Override
+	@Transactional
 	public Utilisateur ajouter(UtilisateurRegistration RegistrationDto) {
 		
 			Utilisateur utilisateur=new Utilisateur(RegistrationDto.getNom(), 
