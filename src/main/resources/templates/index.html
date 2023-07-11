@@ -62,13 +62,8 @@
 							<li class="submenu">
 								<a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
 								<ul>
-									<li><a href="index.html">Home Default</a></li>
-									<li><a href="index-2.html">Home Version 2</a></li>
-									<li><a href="index-3.html">Home Version 3</a></li>
-									<li><a href="index-4.html">Home Version 4</a></li>
-									<li><a href="index-7.html">Home with Map</a></li>
-                                    <li><a href="index-6.html">Revolution Slider</a></li>
-									<li><a href="index-5.html">With Cookie Bar (EU law)</a></li>
+									<li><a th:href="@{list}">Trouver tous les médecins</a></li>
+									<li><a th:href="@{DoctorForm}">Gestion des médecins</a></li>
 								</ul>
 							</li>
 							<li class="submenu">
@@ -118,7 +113,7 @@
 									<li><a href="icon-pack-1.html">Icon pack 1</a></li>
 									<li><a href="icon-pack-2.html">Icon pack 2</a></li>
 									<li><a href="icon-pack-3.html">Icon pack 3</a></li>
-									<li><a href="404.html">404 page</a></li>
+									<li><a th:href="@{404}">404 page</a></li>
 								</ul>
 							</li>
 						</ul>

@@ -61,7 +61,7 @@
 							<a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
 							<ul>
 								<li><a href="index.html">Home Default</a></li>
-								<li><a href="index-2.html">Home Version 2</a></li>
+								<li><a href="EditDoctor.html">Home Version 2</a></li>
 								<li><a href="index-3.html">Home Version 3</a></li>
 								<li><a href="index-4.html">Home Version 4</a></li>
 								<li><a href="index-7.html">Home with Map</a></li>
@@ -158,30 +158,30 @@
 						<!-- FORMUALIRE D'AJOUT -->
 
 						<form th:action="@{save}" method="post">
+							<!-- ID -->
 							<div class="form-group">
-								<label for="Nom">Nom</label>
-								<input type="text" th:value="${docteur.id}" name="id" class="form-control"  th:required="required">
+								<label for="id">ID</label>
+								<input type="text" th:value="${docteur.get().id}" name="id" class="form-control" id="id" th:required="required" th:disabled="disabled" placeholder="Entrer votre nom">
 							</div>
-
 							<div class="form-group">
 								<label for="Nom">Nom</label>
-								<input type="text" th:value="${docteur.nom}" name="nom" class="form-control" id="Nom" th:required="required" placeholder="Entrer votre nom">
+								<input type="text" th:value="${docteur.get().nom}" name="nom" class="form-control" id="Nom" th:required="required" placeholder="Entrer votre nom">
 							</div>
 							<div class="form-group">
 								<label for="Prenom">Prenom</label>
-								<input type="text" th:value="${docteur.prenom}" name="prenom" class="form-control" id="Prenom" th:required="required" placeholder="Entrer votre prenom">
+								<input type="text" th:value="${docteur.get().prenom}" name="prenom" class="form-control" id="Prenom" th:required="required" placeholder="Entrer votre prenom">
 							</div>
 							<div class="form-group">
 								<label for="Adresse">Adresse</label>
-								<input type="text" class="form-control" th:value="${docteur.adresse}" name="adresse" id="Adresse" th:required="required" placeholder="Entrer votre Adresse">
+								<input type="text" class="form-control" th:value="${docteur.get().adresse}" name="adresse" id="Adresse" th:required="required" placeholder="Entrer votre Adresse">
 							</div>
 							<div class="form-group">
 								<label for="Email">Email</label>
-								<input type="email" name="email" class="form-control" th:value="${docteur.email}" id="Email" th:required="required"  placeholder="Entrer votre email">
+								<input type="email" name="email" class="form-control" th:value="${docteur.get().email}" id="Email" th:required="required"  placeholder="Entrer votre email">
 							</div>
 							<div class="form-group">
 								<label>Ville</label>
-								<select class="browser-default custom-select show-tick" name="Ville" th:required="required" th:value="${docteur.ville}">
+								<select class="browser-default custom-select show-tick" name="Ville" th:required="required" th:value="${docteur.get().ville}">
 									<option selected></option>
 									<option value="Ahfir">Ahfir</option>
 									<option value="Al Azrou">Al Azrou</option>
@@ -223,7 +223,7 @@
 							</div>
 							<div class="form-group">
 								<label>specialization</label>
-								<select class="browser-default custom-select show-tick" name="specialite" th:required="required" th:value="${docteur.specialite}">
+								<select class="browser-default custom-select show-tick" name="specialite" th:required="required" th:value="${docteur.get().specialite}">
 									<option selected></option>
 									<option value="Cardiologue">Cardiologue</option>
 									<option value="Chiropracteur">allergologue</option>
@@ -242,7 +242,7 @@
 
 							<div class="form-group">
 								<label>Disponibilite</label>
-								<select class="browser-default custom-select show-tick" name="Disponible"  th:required="required" th:value="${docteur.disponible}">
+								<select class="browser-default custom-select show-tick" name="Disponible"  th:required="required" th:value="${docteur.get().specialite}">
 									<option selected></option>
 									<option value="1">Disponible</option>
 									<option value="0">Indisponible</option>

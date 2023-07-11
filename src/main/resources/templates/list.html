@@ -60,7 +60,7 @@
 								<a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
 								<ul>
 									<li><a href="index.html">Home Default</a></li>
-									<li><a href="index-2.html">Home Version 2</a></li>
+									<li><a href="EditDoctor.html">Home Version 2</a></li>
 									<li><a href="index-3.html">Home Version 3</a></li>
 									<li><a href="index-4.html">Home Version 4</a></li>
 									<li><a href="index-7.html">Home with Map</a></li>
@@ -168,7 +168,10 @@
 								<th>Prenom</th>
 								<th>Ville</th>
 								<th>Specialite</th>
-								<th>Disponible</th>
+								<th>Disponibilite</th>
+								<th>	 </th>
+								<th></th>
+								<th></th>
 								<th></th>
 							</tr>
 							</thead>
@@ -192,7 +195,8 @@
 									<span th:if="${d.disponible}"><a th:href="@{detail-page}">Book now</a></span>
 									<span th:unless="${d.disponible}"></span>
 								</td>
-							<!--	 <td><a th:href="@{delete(id=${d.id},page=${pageCourante},Keyword=${Keyword} )}">Supprimer</a></td> -->
+								<td><a th:href="@{edit(id=${d.id})}">Modifier</a></td>
+							 <td><a th:href="@{delete(id=${d.id})}">Supprimer</a></td>
 							</tr>
 							</tbody>
 

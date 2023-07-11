@@ -10,13 +10,31 @@ import org.jetbrains.annotations.NotNull;
 import java.io.Serializable;
 
 @Entity
+
 public class Docteur implements Serializable {
 
     @Id
     @GeneratedValue
+    @Column(name = "Id")
     private long id;
+    @NotNull
+    @Column(length = 15)
     private String nom;
+    @NotNull
+    @Column(length = 15)
     private String prenom;
+
+    @NotNull
+    private String Ville;
+
+    @NotNull
+    @Column(length = 30)
+    private String adresse;
+    @NotNull
+    private String email;
+    @NotNull
+    private String specialite;
+
 
     public Boolean getDisponible() {
         return Disponible;
@@ -38,7 +56,7 @@ public class Docteur implements Serializable {
         Ville = ville;
     }
 
-    private String Ville;
+
 
     public long getId() {
         return id;
@@ -88,9 +106,7 @@ public class Docteur implements Serializable {
         this.specialite = specialite;
     }
 
-    private String adresse;
-    private String email;
-    private String specialite;
+
 
 
     public Docteur() {

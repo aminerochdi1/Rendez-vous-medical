@@ -7,18 +7,15 @@ import com.ehei.rendezvous.medical.entities.Docteur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 // import org.springframework.ui.Model;
 
 import javax.print.Doc;
-import java.awt.print.Pageable;
-import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class DocteurController {
@@ -49,14 +46,14 @@ public class DocteurController {
     }
 
         // Methode Delete
-            /*
+
           @RequestMapping(value = "/delete",method = RequestMethod.GET)
-    public String delete(long id,String Keyword,int page)
+    public String delete(long id)
     {
-        DocteurRepository.delete(id);
-           return "redirect:/list?page="+page+"&Keyword="+Keyword;
+        docteurRepository.deleteById(id);
+           return "redirect:/list";
     }
-   */
+
 
     @RequestMapping(value="/DoctorForm",method=RequestMethod.GET)
     public String formDocteur(Model model)
@@ -65,15 +62,35 @@ public class DocteurController {
        model.addAttribute("docteur",new Docteur());
         return "register-doctor";
     }
+
+    // AJOUTER UN DOCTEUR
     @RequestMapping(value="/save",method=RequestMethod.POST)
     // DATA BINDING (les donnes en query stocke dans l'objet Docteur )
-    public String save(Model model, Docteur doc)
+
+    // POUR STOCKER LES ERREURS AVEC 'BindingResult'
+    public String save(Model model,  Docteur doc )
     {
         // AJOUT D'UN OBJET
         docteurRepository.save(doc);
         return "confirm";
     }
 
+    public Optional<Docteur> findByid(Long id) {
+
+        return docteurRepository.findById(id);
+    }
+
+    // MODIFIER UN DOCTEUR
+    @RequestMapping(value="/edit",method=RequestMethod.GET)
+    // DATA BINDING (les donnes en query stocke dans l'objet Docteur )
+    // POUR STOCKER LES ERREURS AVEC 'BindingResult'
+    public String edit(Model model, Long id )
+    {
+        Optional<Docteur> doc=docteurRepository.findById(id);
+        // AJOUT D'UN OBJET
+        model.addAttribute("docteur",doc);
+        return "EditDoctor";
+    }
 
 
 }

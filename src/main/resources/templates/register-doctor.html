@@ -35,11 +35,11 @@
 
 	<div class="layer"></div>
 	<!-- Mobile menu overlay mask -->
-
-        <div id="preloader">
-            <div data-loader="circle-side"></div>
-        </div>
-      <!--   End Preload -->
+	<!--
+           <div id="preloader">
+               <div data-loader="circle-side"></div>
+           </div>
+           End Preload -->
     
 	<header class="header_sticky">
 		<div class="container">
@@ -61,7 +61,7 @@
 								<a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
 								<ul>
 									<li><a href="index.html">Home Default</a></li>
-									<li><a href="index-2.html">Home Version 2</a></li>
+									<li><a href="EditDoctor.html">Home Version 2</a></li>
 									<li><a href="index-3.html">Home Version 3</a></li>
 									<li><a href="index-4.html">Home Version 4</a></li>
 									<li><a href="index-7.html">Home with Map</a></li>
@@ -129,65 +129,6 @@
 		<!-- /container -->
 	</header>
 	<!-- /header -->
-
-	<!-- villes
-
-	<option value="Agadir">Agadir</option>
-												<option value="Ahfir">Ahfir</option>
-												<option value="Al Azrou">Al Azrou</option>
-												<option value="Beni Mellal">Beni Mellal</option>
-												<option value="Berkane">Berkane</option>
-												<option value="Bni Drar">Bni Drar</option>
-												<option value="Bouarfa">Bouarfa</option>
-												<option value="Bouznika">Bouznika </option>
-												<option value="Casablanca">Casablanca</option>
-												<option value="Dakhla">Dakhla</option>
-												<option value="El Aïoun">El Aïoun</option>
-												<option value="El Jadida">El Jadida</option>
-												<option value="Errachidia">Errachidia</option>
-												<option value="Essaouira">Essaouira</option>
-												<option value="Fès">Fès</option>
-												<option value="Figuig">Figuig</option>
-												<option value="Guercif">Guercif</option>
-												<option value="Ifrane">Ifrane</option>
-												<option value="Jerada">Jerada</option>
-												<option value="Kénitra">Kénitra</option>
-												<option value="Khénifra">Khénifra</option>
-												<option value="Laayoune">Laayoune</option>
-												<option value="Marrakech">Marrakech</option>
-												<option value="M'Diq">M'Diq</option>
-												<option value="Meknès">Meknès</option>
-												<option value="Nador">Nador</option>
-												<option value="Ouarzazate">Ouarzazate</option>
-												<option value="Oujda">Oujda</option>
-												<option value="Rabat">Rabat</option>
-												<option value="Ras El Ma">Ras El Ma</option>
-												<option value="Saïdia">Saïdia</option>
-												<option value="Settat">Settat</option>
-												<option value="Taza">Taza</option>
-												<option value="Saïdia">Saïdia</option>
-												<option value="Témara">Témara</option>
-												<option value="Tanger">Tanger</option>
-												<option value="Zaïo">Zaïo</option>
-
-	-->
-
-	<!-- specialites
-
-	<option value="allergologue">allergologue</option>
-												<option value="Cardiologue">Cardiologue</option>
-												<option value="Chiropracteur">allergologue</option>
-												<option value="Dentiste">Dentiste</option>
-												<option value="Dermatologue">Dermatologue</option>
-												<option value="Gastro-entérologue">Gastro-entérologue</option>
-												<option value="Ophtalmologiste">Ophtalmologiste</option>
-												<option value="Pédiatre">Pédiatre</option>
-												<option value="Neurologue">Neurologue</option>
-												<option value="Chirurgien">Chirurgien</option>
-												<option value="Médecine familiale">Médecine familiale</option>
-												<option value="Anesthésiste">Anesthésiste</option>
-												<option value="Médecin généraliste">Médecin généraliste</option>
-	-->
 	<main>
 		<div id="hero_register">
 			<div class="container margin_120_95">
@@ -219,24 +160,24 @@
 							<form th:action="@{save}" method="post">
 								<div class="form-group">
 									<label for="Nom">Nom</label>
-									<input type="text" th:value="${docteur.nom}" name="nom" class="form-control" id="Nom" placeholder="Entrer votre nom">
+									<input type="text" th:value="${docteur.nom}" name="nom" class="form-control" id="Nom" th:required="required" placeholder="Entrer votre nom">
 								</div>
 								<div class="form-group">
 									<label for="Prenom">Prenom</label>
-									<input type="text" th:value="${docteur.prenom}" name="prenom" class="form-control" id="Prenom" placeholder="Entrer votre prenom">
+									<input type="text" th:value="${docteur.prenom}" name="prenom" class="form-control" id="Prenom" th:required="required" placeholder="Entrer votre prenom">
 								</div>
 								<div class="form-group">
 									<label for="Adresse">Adresse</label>
-									<input type="text" class="form-control" th:value="${docteur.adresse}" name="adresse" id="Adresse" placeholder="Entrer votre Adresse">
+									<input type="text" class="form-control" th:value="${docteur.adresse}" name="adresse" id="Adresse" th:required="required" placeholder="Entrer votre Adresse">
 								</div>
 								<div class="form-group">
 									<label for="Email">Email</label>
-									<input type="email" name="email" class="form-control" th:value="${docteur.email}" id="Email" placeholder="Entrer votre email">
+									<input type="email" name="email" class="form-control" th:value="${docteur.email}" id="Email" th:required="required"  placeholder="Entrer votre email">
 								</div>
 								<div class="form-group">
 									<label>Ville</label>
-									<select class="browser-default custom-select show-tick" name="Ville" th:value="${docteur.ville}">
-										<option selected>Choisir une ville</option>
+									<select class="browser-default custom-select show-tick" name="Ville" th:required="required" th:value="${docteur.ville}">
+										<option selected></option>
 										<option value="Ahfir">Ahfir</option>
 										<option value="Al Azrou">Al Azrou</option>
 										<option value="Beni Mellal">Beni Mellal</option>
@@ -277,8 +218,8 @@
 								</div>
 								<div class="form-group">
 									<label>specialization</label>
-									<select class="browser-default custom-select show-tick" name="specialite" th:value="${docteur.specialite}">
-										<option selected>Choisir une specialization</option>
+									<select class="browser-default custom-select show-tick" name="specialite" th:required="required" th:value="${docteur.specialite}">
+										<option selected></option>
 										<option value="Cardiologue">Cardiologue</option>
 										<option value="Chiropracteur">allergologue</option>
 										<option value="Dentiste">Dentiste</option>
@@ -296,12 +237,12 @@
 
 								<div class="form-group">
 									<label>Disponibilite</label>
-									<select class="browser-default custom-select show-tick" name="Disponible" th:value="${docteur.disponible}">
+									<select class="browser-default custom-select show-tick" name="Disponible"  th:required="required" th:value="${docteur.disponible}">
+										<option selected></option>
 										<option value="1">Disponible</option>
 										<option value="0">Indisponible</option>
 									</select>
 								</div>
-
 
 								<button type="submit" class="btn btn-primary mb-4">Ajouter</button>
 							</form>
