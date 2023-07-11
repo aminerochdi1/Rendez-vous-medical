@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="utf-8">
@@ -10,24 +10,24 @@
 	<title>FINDOCTOR - Find easily a doctor and book online an appointment</title>
 
 	<!-- Favicons-->
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+	<link rel="shortcut icon" th:href="@{img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" th:href="@{img/apple-touch-icon-57x57-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" th:href="@{img/apple-touch-icon-72x72-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" th:href="@{mg/apple-touch-icon-114x114-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" th:href="@{img/apple-touch-icon-144x144-precomposed.png}">
     
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
 
 	<!-- BASE CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/menu.css" rel="stylesheet">
-	<link href="css/vendors.css" rel="stylesheet">
-	<link href="css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+	<link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/menu.css}" rel="stylesheet">
+	<link th:href="@{css/vendors.css}" rel="stylesheet">
+	<link th:href="@{css/icon_fonts/css/all_icons_min.css}" rel="stylesheet">
     
 	<!-- YOUR CUSTOM CSS -->
-	<link href="css/custom.css" rel="stylesheet">
+	<link th:href="@{css/custom.css}" rel="stylesheet">
 
 </head>
 
@@ -35,18 +35,18 @@
 
 	<div class="layer"></div>
 	<!-- Mobile menu overlay mask -->
-
-	<div id="preloader">
-		<div data-loader="circle-side"></div>
-	</div>
-	<!-- End Preload -->
+	<!--
+        <div id="preloader">
+            <div data-loader="circle-side"></div>
+        </div>
+        End Preload -->
     
 	<header class="header_sticky">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-6">
 					<div id="logo">
-						<a href="index.html" title="Findoctor"><img src="img/logo.png" data-retina="true" alt="" width="163" height="36"></a>
+						<a href="index.html" title="Findoctor"><img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36"></a>
 					</div>
 				</div>
 				<nav class="col-lg-9 col-6">
@@ -109,7 +109,6 @@
                                     <li><a href="booking-page.html">Booking page</a></li>
                                     <li><a href="confirm.html">Confirm page</a></li>
                                 	<li><a href="faq.html">Faq page</a></li>
-                                    <li><a href="coming_soon/index.html">Coming soon</a></li>
 									<li class="third-level"><a href="#0">Pricing tables</a>
 										<ul>
 											<li><a href="pricing-tables-3.html">Pricing tables 1</a></li>
@@ -158,8 +157,10 @@
 								</g>
 							</svg>
 						</div>
-					<h2>Thanks for your booking!</h2>
-					<p>You'll receive a confirmation email at mail@example.com</p>
+
+					<h2>Merci pour votre inscription !</h2>
+
+					<p>Vous recevrez un e-mail de confirmation à <span th:text="${docteur.email}"></span> </p>
 					</div>
 				</div>
 			</div>
@@ -168,14 +169,14 @@
 		<!-- /container -->
 	</main>
 	<!-- /main -->
-	
+
 	<footer>
 		<div class="container margin_60_35">
 			<div class="row">
 				<div class="col-lg-3 col-md-12">
 					<p>
-						<a href="index.html" title="Findoctor">
-							<img src="img/logo.png" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+						<a th:href="@{index}" title="Findoctor">
+							<img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36" class="img-fluid">
 						</a>
 					</p>
 				</div>
@@ -226,7 +227,7 @@
 					</ul>
 				</div>
 				<div class="col-md-4">
-					<div id="copy">© 2017 Findoctor</div>
+					<div id="copy">© 2023 Ehei</div>
 				</div>
 			</div>
 		</div>
@@ -237,9 +238,9 @@
 	<!-- Back to top button -->
 
 	<!-- COMMON SCRIPTS -->
-	<script src="js/jquery-2.2.4.min.js"></script>
-	<script src="js/common_scripts.min.js"></script>
-	<script src="js/functions.js"></script>
+	<script src="../../../../../Envato%20Elements/html_menu_1/js/jquery-2.2.4.min.js"></script>
+	<script src="../../../../../Envato%20Elements/html_menu_1/js/common_scripts.min.js"></script>
+	<script src="../../../../../Envato%20Elements/html_menu_1/js/functions.js"></script>
      
 </body>
 </html>

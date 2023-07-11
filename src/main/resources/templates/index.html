@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+>
 
 <head>
 	<meta charset="utf-8">
@@ -7,27 +8,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Find easily a doctor and book online an appointment">
 	<meta name="author" content="Ansonika">
-	<title>FINDOCTOR - Find easily a doctor and book online an appointment</title>
+	<title>FINDOCTOR</title>
 
 	<!-- Favicons-->
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+	<link rel="shortcut icon" th:href="@{img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" th:href="@{img/apple-touch-icon-57x57-precomposed.png}" >
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" th:href="@{img/apple-touch-icon-72x72-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" th:href="@{img/apple-touch-icon-114x114-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" th:href="@{img/apple-touch-icon-144x144-precomposed.png}">
     
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     
 	<!-- BASE CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/menu.css" rel="stylesheet">
-	<link href="css/vendors.css" rel="stylesheet">
-	<link href="css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+	<link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/menu.css}" rel="stylesheet">
+	<link th:href="@{css/vendors.css}" rel="stylesheet">
+	<link th:href="@{css/icon_fonts/css/all_icons_min.css}" rel="stylesheet">
     
 	<!-- YOUR CUSTOM CSS -->
-	<link href="css/custom.css" rel="stylesheet">
+	<link th:href="@{css/custom.css}" rel="stylesheet">
 
 </head>
 
@@ -35,10 +36,11 @@
 
 	<div class="layer"></div>
 	<!-- Mobile menu overlay mask -->
-
+        <!--
 	<div id="preloader">
 		<div data-loader="circle-side"></div>
 	</div>
+	-->
 	<!-- End Preload -->
     
 	<header class="header_sticky">
@@ -46,7 +48,7 @@
 			<div class="row">
 				<div class="col-lg-3 col-6">
 					<div id="logo_home">
-						<h1><a href="index.html" title="Findoctor">Findoctor</a></h1>
+						<h1><a th:href="@{index}" title="Findoctor">Findoctor</a></h1>
 					</div>
 				</div>
 				<nav class="col-lg-9 col-6">
@@ -105,7 +107,7 @@
                                     <li><a href="booking-page.html">Booking page</a></li>
                                     <li><a href="confirm.html">Confirm page</a></li>
                                 	<li><a href="faq.html">Faq page</a></li>
-                                    <li><a href="coming_soon/index.html">Coming soon</a></li>
+                                    <li><a th:href="@{coming_soon/index.html}">Coming soon</a></li>
 									<li class="third-level"><a href="#0">Pricing tables</a>
 										<ul>
 											<li><a href="pricing-tables-3.html">Pricing tables 1</a></li>
@@ -119,7 +121,6 @@
 									<li><a href="404.html">404 page</a></li>
 								</ul>
 							</li>
-							<li><a href="#0">Buy this template</a></li>
 						</ul>
 					</div>
 					<!-- /main-menu -->
@@ -133,65 +134,45 @@
 	<main>
 		<div class="hero_home version_1">
 			<div class="content">
-				<h3>Find a Doctor!</h3>
+				<h3>Trouver un médecin</h3>
 				<p>
-					Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+					à la recherche d'un médecin, tapez simplement la spécialisation que vous souhaitez .
 				</p>
-				<form method="post" action="list.html">
-					<div id="custom-search-input">
-						<div class="input-group">
-							<input type="text" class=" search-query" placeholder="Ex. Name, Specialization ....">
-							<input type="submit" class="btn_search" value="Search">
-						</div>
-						<ul>
-							<li>
-								<input type="radio" id="all" name="radio_search" value="all" checked>
-								<label for="all">All</label>
-							</li>
-							<li>
-								<input type="radio" id="doctor" name="radio_search" value="doctor">
-								<label for="doctor">Doctor</label>
-							</li>
-							<li>
-								<input type="radio" id="clinic" name="radio_search" value="clinic">
-								<label for="clinic">Clinic</label>
-							</li>
-						</ul>
 					</div>
-				</form>
+
 			</div>
 		</div>
 		<!-- /Hero -->
 
 		<div class="container margin_120_95">
 			<div class="main_title">
-				<h2>Discover the <strong>online</strong> appointment!</h2>
-				<p>Usu habeo equidem sanctus no. Suas summo id sed, erat erant oporteat cu pri. In eum omnes molestie. Sed ad debet scaevola, ne mel.</p>
+				<h2>Découvrez le <strong>rendez-vous</strong> en ligne!</h2>
+				<p>Découvrez la facilité des rendez-vous en ligne grâce à notre application .</p>
 			</div>
 			<div class="row add_bottom_30">
 				<div class="col-lg-4">
 					<div class="box_feat" id="icon_1">
 						<span></span>
-						<h3>Find a Doctor</h3>
-						<p>Usu habeo equidem sanctus no. Suas summo id sed, erat erant oporteat cu pri. In eum omnes molestie.</p>
+						<h3>Trouver un médecin</h3>
+						<p>Trouvez facilement un médecin avec notre application .</p>
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="box_feat" id="icon_2">
 						<span></span>
-						<h3>View profile</h3>
-						<p>Usu habeo equidem sanctus no. Suas summo id sed, erat erant oporteat cu pri. In eum omnes molestie.</p>
+						<h3>Voir le profil</h3>
+						<p>Découvrez le profil détaillé de votre médecin grâce à notre fonctionnalité 'Voir le profil' </p>
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="box_feat" id="icon_3">
-						<h3>Book a visit</h3>
-						<p>Usu habeo equidem sanctus no. Suas summo id sed, erat erant oporteat cu pri. In eum omnes molestie.</p>
+						<h3>Réserver une visite</h3>
+						<p>Réservez facilement une visite médicale avec notre fonctionnalité de réservation en ligne .</p>
 					</div>
 				</div>
 			</div>
 			<!-- /row -->
-			<p class="text-center"><a href="list.html" class="btn_1 medium">Find Doctor</a></p>
+			<p class="text-center"><a th:href="@{list}" class="btn_1 medium">Trouver un médecin</a></p>
 
 		</div>
 		<!-- /container -->
@@ -252,27 +233,54 @@
 
 		<div class="container margin_120_95">
 			<div class="main_title">
-				<h2>Find your doctor or clinic</h2>
-				<p>Nec graeci sadipscing disputationi ne, mea ea nonumes percipitur. Nonumy ponderum oporteat cu mel, pro movet cetero at.</p>
+				<h2>Trouvez votre médecin ou votre clinique</h2>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-xl-4 col-lg-5 col-md-6">
 					<div class="list_home">
 						<div class="list_title">
 							<i class="icon_pin_alt"></i>
-							<h3>Search by City or Zone</h3>
+							<h3>Recherche par ville</h3>
 						</div>
 						<ul>
-							<li><a href="#0"><strong>23</strong>Albany</a></li>
-							<li><a href="#0"><strong>23</strong>Albuquerque</a></li>
-							<li><a href="#0"><strong>23</strong>Atlanta</a></li>
-							<li><a href="#0"><strong>23</strong>Baltimore</a></li>
-							<li><a href="#0"><strong>23</strong>Baton Rouge</a></li>
-							<li><a href="#0"><strong>23</strong>Birmingham</a></li>
-							<li><a href="#0"><strong>23</strong>Boston</a></li>
-							<li><a href="#0"><strong>23</strong>Buffalo</a></li>
-							<li><a href="#0"><strong>23</strong>Charleston</a></li>
-							<li><a href="#0">More...</a></li>
+							<li><a href="#1"><strong>1</strong>Agadir</a></li>
+							<li><a href="#2"><strong>2</strong>Ahfir</a></li>
+							<li><a href="#3"><strong>3</strong>Al Aaroui</a></li>
+							<li><a href="#4"><strong>4</strong>Azrou</a></li>
+							<li><a href="#5"><strong>5</strong>Beni Mellal</a></li>
+							<li><a href="#6"><strong>6</strong>Berkane</a></li>
+							<li><a href="#7"><strong>7</strong>Bni Drar</a></li>
+							<li><a href="#8"><strong>8</strong>Bouarfa</a></li>
+							<li><a href="#9"><strong>9</strong>Bouznika </a></li>
+							<li><a href="#10"><strong>10</strong>Casablanca</a></li>
+							<li><a href="#11"><strong>11</strong>Dakhla</a></li>
+							<li><a href="#12"><strong>12</strong>El Aïoun</a></li>
+							<li><a href="#13"><strong>13</strong>El Jadida</a></li>
+							<li><a href="#14"><strong>14</strong>Errachidia </a></li>
+							<li><a href="#15"><strong>15</strong>Essaouira </a></li>
+							<li><a href="#16"><strong>16</strong>Fès</a></li>
+							<li><a href="#17"><strong>17</strong>Figuig</a></li>
+							<li><a href="#18"><strong>18</strong>Guercif</a></li>
+							<li><a href="#19"><strong>19</strong>Ifrane</a></li>
+							<li><a href="#20"><strong>20</strong>Jerada</a></li>
+							<li><a href="#21"><strong>21</strong>Kénitra</a></li>
+							<li><a href="#22"><strong>22</strong>Khénifra</a></li>
+							<li><a href="#23"><strong>23</strong>Laayoune</a></li>
+							<li><a href="#24"><strong>24</strong>Marrakech</a></li>
+							<li><a href="#25"><strong>24</strong>M'Diq</a></li>
+							<li><a href="#26"><strong>24</strong>Meknès</a></li>
+							<li><a href="#27"><strong>24</strong>Mohammédia</a></li>
+							<li><a href="#28"><strong>24</strong>Nador</a></li>
+							<li><a href="#29"><strong>24</strong>Ouarzazate</a></li>
+							<li><a href="#30"><strong>24</strong>Oujda </a></li>
+							<li><a href="#31"><strong>24</strong>Rabat</a></li>
+							<li><a href="#32"><strong>24</strong>Ras El Ma </a></li>
+							<li><a href="#33"><strong>24</strong>Saïdia</a></li>
+							<li><a href="#34"><strong>24</strong>Settat</a></li>
+							<li><a href="#35"><strong>24</strong>Taza</a></li>
+							<li><a href="#36"><strong>24</strong>Témara </a></li>
+							<li><a href="#37"><strong>24</strong>Tanger</a></li>
+							<li><a href="#38"><strong>24</strong>Zaïo</a></li>
 						</ul>
 					</div>
 				</div>
@@ -280,53 +288,30 @@
 					<div class="list_home">
 						<div class="list_title">
 							<i class="icon_archive_alt"></i>
-							<h3>Search by type</h3>
+							<h3>Rechercher par type</h3>
 						</div>
 						<ul>
-							<li><a href="#0"><strong>23</strong>Allergist</a></li>
-							<li><a href="#0"><strong>23</strong>Cardiologist</a></li>
-							<li><a href="#0"><strong>23</strong>Chiropractor</a></li>
-							<li><a href="#0"><strong>23</strong>Dentist</a></li>
-							<li><a href="#0"><strong>23</strong>Dermatologist</a></li>
-							<li><a href="#0"><strong>23</strong>Gastroenterologist</a></li>
-							<li><a href="#0"><strong>23</strong>Ophthalmologist</a></li>
-							<li><a href="#0"><strong>23</strong>Optometrist</a></li>
-							<li><a href="#0"><strong>23</strong>Pediatrician</a></li>
-							<li><a href="#0">More....</a></li>
+							<li><a href="#1"><strong>1</strong>allergologue</a></li>
+							<li><a href="#2"><strong>2</strong>Cardiologue</a></li>
+							<li><a href="#3"><strong>3</strong>Chiropracteur</a></li>
+							<li><a href="#4"><strong>4</strong>Dentiste</a></li>
+							<li><a href="#5"><strong>5</strong>Dermatologue</a></li>
+							<li><a href="#6"><strong>6</strong>Gastro-entérologue</a></li>
+							<li><a href="#7"><strong>7</strong>Ophtalmologiste</a></li>
+							<li><a href="#8"><strong>8</strong>Optométriste</a></li>
+							<li><a href="#9"><strong>9</strong>Pédiatre</a></li>
+							<li><a href="#10"><strong>10</strong>Neurologue</a></li>
+							<li><a href="#11"><strong>11</strong>Chirurgien</a></li>
+							<li><a href="#12"><strong>12</strong>Médecine familiale</a></li>
+							<li><a href="#13"><strong>13</strong>Anesthésiste</a></li>
+							<li><a href="#14"><strong>14</strong>Médecin généraliste</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!-- /row -->
 		</div>
-		<!-- /container -->
 
-		<div id="app_section">
-			<div class="container">
-				<div class="row justify-content-around">
-					<div class="col-md-5">
-						<p><img src="img/app_img.svg" alt="" class="img-fluid" width="500" height="433"></p>
-					</div>
-					<div class="col-md-6">
-						<small>Application</small>
-						<h3>Download <strong>Findoctor App</strong> Now!</h3>
-						<p class="lead">Tota omittantur necessitatibus mei ei. Quo paulo perfecto eu, errem percipit ponderum no eos. Has eu mazim sensibus. Ad nonumes dissentiunt qui, ei menandri electram eos. Nam iisque consequuntur cu.</p>
-						<div class="app_buttons wow" data-wow-offset="100">
-							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 43.1 85.9" style="enable-background:new 0 0 43.1 85.9;" xml:space="preserve">
-							<path stroke-linecap="round" stroke-linejoin="round" class="st0 draw-arrow" d="M11.3,2.5c-5.8,5-8.7,12.7-9,20.3s2,15.1,5.3,22c6.7,14,18,25.8,31.7,33.1" />
-							<path stroke-linecap="round" stroke-linejoin="round" class="draw-arrow tail-1" d="M40.6,78.1C39,71.3,37.2,64.6,35.2,58" />
-							<path stroke-linecap="round" stroke-linejoin="round" class="draw-arrow tail-2" d="M39.8,78.5c-7.2,1.7-14.3,3.3-21.5,4.9" />
-						</svg>
-							<a href="#0" class="fadeIn"><img src="img/apple_app.png" alt="" width="150" height="50" data-retina="true"></a>
-							<a href="#0" class="fadeIn"><img src="img/google_play_app.png" alt="" width="150" height="50" data-retina="true"></a>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /app_section -->
 	</main>
 	<!-- /main content -->
 	
@@ -335,8 +320,8 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-12">
 					<p>
-						<a href="index.html" title="Findoctor">
-							<img src="img/logo.png" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+						<a th:href="@{index}" title="Findoctor">
+							<img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36" class="img-fluid">
 						</a>
 					</p>
 				</div>
@@ -387,7 +372,7 @@
 					</ul>
 				</div>
 				<div class="col-md-4">
-					<div id="copy">© 2017 Findoctor</div>
+					<div id="copy">© 2023 Ehei</div>
 				</div>
 			</div>
 		</div>
@@ -398,9 +383,9 @@
 	<!-- Back to top button -->
 
 	<!-- COMMON SCRIPTS -->
-	<script src="js/jquery-2.2.4.min.js"></script>
-	<script src="js/common_scripts.min.js"></script>
-	<script src="js/functions.js"></script>
+	<script th:src="@{js/jquery-2.2.4.min.js}"></script>
+	<script th:src="@{js/common_scripts.min.js}"></script>
+	<script th:src="@{js/functions.js}"></script>
 
 </body>
 

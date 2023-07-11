@@ -1,9 +1,7 @@
-package com.ehei.rendezvous.medical.com.ehei.rendezvous.medical;
-import org.springframework.stereotype.Service;
+package com.ehei.rendezvous.medical;
 
-import com.ehei.rendezvousmedical.model.Utilisateur;
-import com.ehei.rendezvousmedical.repository.UtilisateurRepo;
-
+import com.ehei.rendezvous.medical.DAO.UtilisateurRepository;
+import com.ehei.rendezvous.medical.entities.Utilisateur;
 import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,18 +13,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@ComponentScan
-@EnableConfigurationProperties
-@EnableJpaRepositories("om.ehei.rendezvousmedical.repository.UtilisateurRepo")
-@ComponentScan({"com.ehei.rendezvousmedical.service.UtilisateurService"})
-@ComponentScan({"com.ehei.rendezvousmedical.repository.UtilisateurRepo"})
-@EntityScan({"com.ehei.rendezvousmedical.model"})
 public class RendezVousMedicalApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = (ApplicationContext) SpringApplication.run(RendezVousMedicalApplication.class, args);
-		// UtilisateurRepo utilisateurRepo=ctx.getBean(UtilisateurRepo.class);
-		// utilisateurRepo.save(new Utilisateur("test","test","01-01-2001","test","test@test.com","TEST"));
-		
+		//ApplicationContext ctx = (ApplicationContext)
+
+		// IOC CONTAINER TO ACCESS DIFFERENT RESOURCES
+		SpringApplication.run(RendezVousMedicalApplication.class, args);
+
+
 	}	
 }

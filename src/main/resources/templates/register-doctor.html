@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="utf-8">
@@ -10,24 +10,24 @@
 	<title>FINDOCTOR - Find easily a doctor and book online an appointment</title>
 
 	<!-- Favicons-->
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
-    
+	<link rel="shortcut icon" th:href="@{img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" th:href="@{img/apple-touch-icon-57x57-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" th:href="@{img/apple-touch-icon-72x72-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" th:href="@{img/apple-touch-icon-114x114-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" th:href="@{img/apple-touch-icon-144x144-precomposed.png}">
+
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     
 	<!-- BASE CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/menu.css" rel="stylesheet">
-	<link href="css/vendors.css" rel="stylesheet">
-	<link href="css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+	<link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/menu.css}" rel="stylesheet">
+	<link th:href="@{css/vendors.css}" rel="stylesheet">
+	<link th:href="@{css/icon_fonts/css/all_icons_min.css}" rel="stylesheet">
     
 	<!-- YOUR CUSTOM CSS -->
-	<link href="css/custom.css" rel="stylesheet">
+	<link th:href="@{css/custom.css}" rel="stylesheet">
 
 </head>
 
@@ -36,17 +36,17 @@
 	<div class="layer"></div>
 	<!-- Mobile menu overlay mask -->
 
-	<div id="preloader">
-		<div data-loader="circle-side"></div>
-	</div>
-	<!-- End Preload -->
+        <div id="preloader">
+            <div data-loader="circle-side"></div>
+        </div>
+      <!--   End Preload -->
     
 	<header class="header_sticky">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-6">
 					<div id="logo">
-						<a href="index.html" title="Findoctor"><img src="img/logo.png" data-retina="true" alt="" width="163" height="36"></a>
+						<a href="index.html" title="Findoctor"><img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36"></a>
 					</div>
 				</div>
 				<nav class="col-lg-9 col-6">
@@ -105,7 +105,7 @@
                                     <li><a href="booking-page.html">Booking page</a></li>
                                     <li><a href="confirm.html">Confirm page</a></li>
                                 	<li><a href="faq.html">Faq page</a></li>
-                                    <li><a href="coming_soon/index.html">Coming soon</a></li>
+                                    <li><a th:href="@{coming_soon/index.html}">Coming soon</a></li>
 									<li class="third-level"><a href="#0">Pricing tables</a>
 										<ul>
 											<li><a href="pricing-tables-3.html">Pricing tables 1</a></li>
@@ -129,93 +129,181 @@
 		<!-- /container -->
 	</header>
 	<!-- /header -->
-	
+
+	<!-- villes
+
+	<option value="Agadir">Agadir</option>
+												<option value="Ahfir">Ahfir</option>
+												<option value="Al Azrou">Al Azrou</option>
+												<option value="Beni Mellal">Beni Mellal</option>
+												<option value="Berkane">Berkane</option>
+												<option value="Bni Drar">Bni Drar</option>
+												<option value="Bouarfa">Bouarfa</option>
+												<option value="Bouznika">Bouznika </option>
+												<option value="Casablanca">Casablanca</option>
+												<option value="Dakhla">Dakhla</option>
+												<option value="El Aïoun">El Aïoun</option>
+												<option value="El Jadida">El Jadida</option>
+												<option value="Errachidia">Errachidia</option>
+												<option value="Essaouira">Essaouira</option>
+												<option value="Fès">Fès</option>
+												<option value="Figuig">Figuig</option>
+												<option value="Guercif">Guercif</option>
+												<option value="Ifrane">Ifrane</option>
+												<option value="Jerada">Jerada</option>
+												<option value="Kénitra">Kénitra</option>
+												<option value="Khénifra">Khénifra</option>
+												<option value="Laayoune">Laayoune</option>
+												<option value="Marrakech">Marrakech</option>
+												<option value="M'Diq">M'Diq</option>
+												<option value="Meknès">Meknès</option>
+												<option value="Nador">Nador</option>
+												<option value="Ouarzazate">Ouarzazate</option>
+												<option value="Oujda">Oujda</option>
+												<option value="Rabat">Rabat</option>
+												<option value="Ras El Ma">Ras El Ma</option>
+												<option value="Saïdia">Saïdia</option>
+												<option value="Settat">Settat</option>
+												<option value="Taza">Taza</option>
+												<option value="Saïdia">Saïdia</option>
+												<option value="Témara">Témara</option>
+												<option value="Tanger">Tanger</option>
+												<option value="Zaïo">Zaïo</option>
+
+	-->
+
+	<!-- specialites
+
+	<option value="allergologue">allergologue</option>
+												<option value="Cardiologue">Cardiologue</option>
+												<option value="Chiropracteur">allergologue</option>
+												<option value="Dentiste">Dentiste</option>
+												<option value="Dermatologue">Dermatologue</option>
+												<option value="Gastro-entérologue">Gastro-entérologue</option>
+												<option value="Ophtalmologiste">Ophtalmologiste</option>
+												<option value="Pédiatre">Pédiatre</option>
+												<option value="Neurologue">Neurologue</option>
+												<option value="Chirurgien">Chirurgien</option>
+												<option value="Médecine familiale">Médecine familiale</option>
+												<option value="Anesthésiste">Anesthésiste</option>
+												<option value="Médecin généraliste">Médecin généraliste</option>
+	-->
 	<main>
 		<div id="hero_register">
-			<div class="container margin_120_95">			
+			<div class="container margin_120_95">
 				<div class="row">
 					<div class="col-lg-6">
-						<h1>It's time to find you!</h1>
-						<p class="lead">Te pri adhuc simul. No eros errem mea. Diam mandamus has ad. Invenire senserit ad has, has ei quis iudico, ad mei nonumes periculis.</p>
+						<h1>Il est temps de vous retrouver !</h1>
 						<div class="box_feat_2">
 							<i class="pe-7s-map-2"></i>
-							<h3>Let patients to Find you!</h3>
+							<h3>Laissez les patients vous trouver!</h3>
 							<p>Ut nam graece accumsan cotidieque. Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet.</p>
 						</div>
 						<div class="box_feat_2">
 							<i class="pe-7s-date"></i>
-							<h3>Easly manage Bookings</h3>
+							<h3>Gérez facilement les réservations</h3>
 							<p>Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet. Eum no atqui putant democritum, velit nusquam sententiae vis no.</p>
 						</div>
 						<div class="box_feat_2">
 							<i class="pe-7s-phone"></i>
-							<h3>Instantly via Mobile</h3>
+							<h3>Réservez instantanément</h3>
 							<p>Eos eu epicuri eleifend suavitate, te primis placerat suavitate his. Nam ut dico intellegat reprehendunt, everti audiam diceret in pri, id has clita consequat suscipiantur.</p>
 						</div>
 					</div>
 					<!-- /col -->
 					<div class="col-lg-5 ml-auto">
-						<div class="box_form">
-							<form>
-								<div class="row">
-									<div class="col-md-6 ">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Last Name">
-										</div>
-									</div>
+						<div>
+
+							<!-- FORMUALIRE D'AJOUT -->
+
+							<form th:action="@{save}" method="post">
+								<div class="form-group">
+									<label for="Nom">Nom</label>
+									<input type="text" th:value="${docteur.nom}" name="nom" class="form-control" id="Nom" placeholder="Entrer votre nom">
 								</div>
-								<!-- /row -->
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Specialization">
-										</div>
-									</div>
+								<div class="form-group">
+									<label for="Prenom">Prenom</label>
+									<input type="text" th:value="${docteur.prenom}" name="prenom" class="form-control" id="Prenom" placeholder="Entrer votre prenom">
 								</div>
-								<!-- /row -->
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="City">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<select class="form-control">
-												<option value="">Country</option>
-											</select>
-										</div>
-									</div>
+								<div class="form-group">
+									<label for="Adresse">Adresse</label>
+									<input type="text" class="form-control" th:value="${docteur.adresse}" name="adresse" id="Adresse" placeholder="Entrer votre Adresse">
 								</div>
-								<!-- /row -->
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Mobile Phone">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Office Phone">
-										</div>
-									</div>
+								<div class="form-group">
+									<label for="Email">Email</label>
+									<input type="email" name="email" class="form-control" th:value="${docteur.email}" id="Email" placeholder="Entrer votre email">
 								</div>
-								<!-- /row -->
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="form-group">
-											<input type="email" class="form-control" placeholder="Email Address">
-										</div>
-									</div>
+								<div class="form-group">
+									<label>Ville</label>
+									<select class="browser-default custom-select show-tick" name="Ville" th:value="${docteur.ville}">
+										<option selected>Choisir une ville</option>
+										<option value="Ahfir">Ahfir</option>
+										<option value="Al Azrou">Al Azrou</option>
+										<option value="Beni Mellal">Beni Mellal</option>
+										<option value="Berkane">Berkane</option>
+										<option value="Bni Drar">Bni Drar</option>
+										<option value="Bouarfa">Bouarfa</option>
+										<option value="Bouznika">Bouznika </option>
+										<option value="Casablanca">Casablanca</option>
+										<option value="Dakhla">Dakhla</option>
+										<option value="El Aïoun">El Aïoun</option>
+										<option value="El Jadida">El Jadida</option>
+										<option value="Errachidia">Errachidia</option>
+										<option value="Essaouira">Essaouira</option>
+										<option value="Fès">Fès</option>
+										<option value="Figuig">Figuig</option>
+										<option value="Guercif">Guercif</option>
+										<option value="Ifrane">Ifrane</option>
+										<option value="Jerada">Jerada</option>
+										<option value="Kénitra">Kénitra</option>
+										<option value="Khénifra">Khénifra</option>
+										<option value="Laayoune">Laayoune</option>
+										<option value="Marrakech">Marrakech</option>
+										<option value="M'Diq">M'Diq</option>
+										<option value="Meknès">Meknès</option>
+										<option value="Nador">Nador</option>
+										<option value="Ouarzazate">Ouarzazate</option>
+										<option value="Oujda">Oujda</option>
+										<option value="Rabat">Rabat</option>
+										<option value="Ras El Ma">Ras El Ma</option>
+										<option value="Saïdia">Saïdia</option>
+										<option value="Settat">Settat</option>
+										<option value="Taza">Taza</option>
+										<option value="Saïdia">Saïdia</option>
+										<option value="Témara">Témara</option>
+										<option value="Tanger">Tanger</option>
+										<option value="Zaïo">Zaïo</option>
+									</select>
 								</div>
-								<!-- /row -->
-								<p class="text-center add_top_30"><input type="submit" class="btn_1" value="Submit"></p>
-								<div class="text-center"><small>Ut nam graece accumsan cotidieque. Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet.</small></div>
+								<div class="form-group">
+									<label>specialization</label>
+									<select class="browser-default custom-select show-tick" name="specialite" th:value="${docteur.specialite}">
+										<option selected>Choisir une specialization</option>
+										<option value="Cardiologue">Cardiologue</option>
+										<option value="Chiropracteur">allergologue</option>
+										<option value="Dentiste">Dentiste</option>
+										<option value="Dermatologue">Dermatologue</option>
+										<option value="Gastro-entérologue">Gastro-entérologue</option>
+										<option value="Ophtalmologiste">Ophtalmologiste</option>
+										<option value="Pédiatre">Pédiatre</option>
+										<option value="Neurologue">Neurologue</option>
+										<option value="Chirurgien">Chirurgien</option>
+										<option value="Médecine familiale">Médecine familiale</option>
+										<option value="Anesthésiste">Anesthésiste</option>
+										<option value="Médecin généraliste">Médecin généraliste</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label>Disponibilite</label>
+									<select class="browser-default custom-select show-tick" name="Disponible" th:value="${docteur.disponible}">
+										<option value="1">Disponible</option>
+										<option value="0">Indisponible</option>
+									</select>
+								</div>
+
+
+								<button type="submit" class="btn btn-primary mb-4">Ajouter</button>
 							</form>
 						</div>
 						<!-- /box_form -->
@@ -229,14 +317,14 @@
 		<!-- /hero_register -->
 	</main>
 	<!-- /main -->
-	
+
 	<footer>
 		<div class="container margin_60_35">
 			<div class="row">
 				<div class="col-lg-3 col-md-12">
 					<p>
-						<a href="index.html" title="Findoctor">
-							<img src="img/logo.png" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+						<a th:href="@{index}" title="Findoctor">
+							<img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36" class="img-fluid">
 						</a>
 					</p>
 				</div>
@@ -287,7 +375,7 @@
 					</ul>
 				</div>
 				<div class="col-md-4">
-					<div id="copy">© 2017 Findoctor</div>
+					<div id="copy">© 2023 Ehei</div>
 				</div>
 			</div>
 		</div>
@@ -298,9 +386,9 @@
 	<!-- Back to top button -->
 
 	<!-- COMMON SCRIPTS -->
-	<script src="js/jquery-2.2.4.min.js"></script>
-	<script src="js/common_scripts.min.js"></script>
-	<script src="js/functions.js"></script>
+	<script th:src="@{js/jquery-2.2.4.min.js}"></script>
+	<script th:src="@{js/common_scripts.min.js}"></script>
+	<script th:src="@{js/functions.js}"></script>
 
 </body>
 </html>
