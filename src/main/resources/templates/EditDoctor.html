@@ -45,81 +45,30 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-6">
-				<div id="logo">
-					<a href="index.html" title="Findoctor"><img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36"></a>
+				<div id="logo_home">
+					<h1><a th:href="@{index}" title="Findoctor">Findoctor</a></h1>
 				</div>
 			</div>
 			<nav class="col-lg-9 col-6">
 				<a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
 				<ul id="top_access">
-					<li><a href="login.html"><i class="pe-7s-user"></i></a></li>
-					<li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
+					<li><a th:href="@{patientLogin}"><i class="pe-7s-user"></i></a></li>
+					<li><a th:href="@{register}"><i class="pe-7s-add-user"></i></a></li>
 				</ul>
 				<div class="main-menu">
 					<ul>
 						<li class="submenu">
 							<a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
 							<ul>
-								<li><a href="index.html">Home Default</a></li>
-								<li><a href="EditDoctor.html">Home Version 2</a></li>
-								<li><a href="index-3.html">Home Version 3</a></li>
-								<li><a href="index-4.html">Home Version 4</a></li>
-								<li><a href="index-7.html">Home with Map</a></li>
-								<li><a href="index-6.html">Revolution Slider</a></li>
-								<li><a href="index-5.html">With Cookie Bar (EU law)</a></li>
+								<li><a th:href="@{list}">Trouver tous les médecins disponibles</a></li>
+								<li><a th:href="@{DoctorForm}">Gestion des médecins</a></li>
+								<li><a th:href="@{register}">Sign up as a patient</a></li>
+								<li><a th:href="@{register-doctor}">Admin Registration</a> </li>
+								<li><a th:href="@{patientLogin}">Login d'un patient</a> </li>
+								<li><a th:href="@{ListAdmin}">Liste d'admin</a> </li>
 							</ul>
 						</li>
-						<li class="submenu">
-							<a href="#0" class="show-submenu">Pages<i class="icon-down-open-mini"></i></a>
-							<ul>
-								<li class="third-level"><a href="#0">List pages</a>
-									<ul>
-										<li><a href="list.html">List page</a></li>
-										<li><a href="grid-list.html">List grid page</a></li>
-										<li><a href="list-map.html">List map page</a></li>
-									</ul>
-								</li>
-								<li class="third-level"><a href="#0">Detail pages</a>
-									<ul>
-										<li><a href="detail-page.html">Detail page 1</a></li>
-										<li><a href="detail-page-2.html">Detail page 2</a></li>
-										<li><a href="detail-page-3.html">Detail page 3</a></li>
-										<li><a href="detail-page-working-booking.html">Detail working booking</a></li>
-									</ul>
-								</li>
-								<li><a href="submit-review.html">Submit Review</a></li>
-								<li><a href="blog-1.html">Blog</a></li>
-								<li><a href="badges.html">Badges</a></li>
-								<li><a href="login.html">Login</a></li>
-								<li><a href="login-2.html">Login 2</a></li>
-								<li><a href="register-doctor.html">Register Doctor</a></li>
-								<li><a href="register-doctor-working.html">Working doctor register</a></li>
-								<li><a href="register.html">Register</a></li>
-								<li><a href="about.html">About Us</a></li>
-								<li><a href="contacts.html">Contacts</a></li>
-							</ul>
-						</li>
-						<li class="submenu">
-							<a href="#0" class="show-submenu">Extra Elements<i class="icon-down-open-mini"></i></a>
-							<ul>
-								<li><a href="booking-page.html">Booking page</a></li>
-								<li><a href="confirm.html">Confirm page</a></li>
-								<li><a href="faq.html">Faq page</a></li>
-								<li><a th:href="@{coming_soon/index.html}">Coming soon</a></li>
-								<li class="third-level"><a href="#0">Pricing tables</a>
-									<ul>
-										<li><a href="pricing-tables-3.html">Pricing tables 1</a></li>
-										<li><a href="pricing-tables.html">Pricing tables 2</a></li>
-										<li><a href="pricing-tables-2.html">Pricing tables 3</a></li>
-									</ul>
-								</li>
-								<li><a href="icon-pack-1.html">Icon pack 1</a></li>
-								<li><a href="icon-pack-2.html">Icon pack 2</a></li>
-								<li><a href="icon-pack-3.html">Icon pack 3</a></li>
-								<li><a href="404.html">404 page</a></li>
-							</ul>
-						</li>
-						<li><a href="#0">Buy this template</a></li>
+
 					</ul>
 				</div>
 				<!-- /main-menu -->
@@ -128,6 +77,7 @@
 	</div>
 	<!-- /container -->
 </header>
+<!-- /header -->
 <!-- /header -->
 <main>
 	<div id="hero_register">
@@ -157,32 +107,31 @@
 
 						<!-- FORMUALIRE D'AJOUT -->
 
-						<form th:action="@{save}" method="post">
+						<form th:action="@{/save}" method="post">
 							<!-- ID -->
 							<div class="form-group">
-								<label for="id">ID</label>
-								<input type="text" th:value="${docteur.get().id}" name="id" class="form-control" id="id" th:required="required" th:disabled="disabled" placeholder="Entrer votre nom">
+								<input type="text" th:value="${docteur.id}" name="id" class="form-control" th:disabled="disabled" th:required="required" >
 							</div>
 							<div class="form-group">
 								<label for="Nom">Nom</label>
-								<input type="text" th:value="${docteur.get().nom}" name="nom" class="form-control" id="Nom" th:required="required" placeholder="Entrer votre nom">
+								<input type="text" th:value="${docteur.nom}" name="nom" class="form-control" id="Nom" th:required="required" placeholder="Entrer votre nom">
 							</div>
 							<div class="form-group">
 								<label for="Prenom">Prenom</label>
-								<input type="text" th:value="${docteur.get().prenom}" name="prenom" class="form-control" id="Prenom" th:required="required" placeholder="Entrer votre prenom">
+								<input type="text" th:value="${docteur.prenom}" name="prenom" class="form-control" id="Prenom" th:required="required" placeholder="Entrer votre prenom">
 							</div>
 							<div class="form-group">
 								<label for="Adresse">Adresse</label>
-								<input type="text" class="form-control" th:value="${docteur.get().adresse}" name="adresse" id="Adresse" th:required="required" placeholder="Entrer votre Adresse">
+								<input type="text" class="form-control" th:value="${docteur.adresse}" name="adresse" id="Adresse" th:required="required" placeholder="Entrer votre Adresse">
 							</div>
 							<div class="form-group">
 								<label for="Email">Email</label>
-								<input type="email" name="email" class="form-control" th:value="${docteur.get().email}" id="Email" th:required="required"  placeholder="Entrer votre email">
+								<input type="email" name="email" class="form-control" th:value="${docteur.email}" id="Email" th:required="required"  placeholder="Entrer votre email">
 							</div>
 							<div class="form-group">
 								<label>Ville</label>
-								<select class="browser-default custom-select show-tick" name="Ville" th:required="required" th:value="${docteur.get().ville}">
-									<option selected></option>
+								<select class="browser-default custom-select show-tick" name="Ville" th:value="${docteur.ville}" th:required="required">
+									<option selected ></option>
 									<option value="Ahfir">Ahfir</option>
 									<option value="Al Azrou">Al Azrou</option>
 									<option value="Beni Mellal">Beni Mellal</option>
@@ -223,8 +172,8 @@
 							</div>
 							<div class="form-group">
 								<label>specialization</label>
-								<select class="browser-default custom-select show-tick" name="specialite" th:required="required" th:value="${docteur.get().specialite}">
-									<option selected></option>
+								<select class="browser-default custom-select show-tick" name="specialite" th:value="${docteur.specialite}" th:required="required">
+									<option selected ></option>
 									<option value="Cardiologue">Cardiologue</option>
 									<option value="Chiropracteur">allergologue</option>
 									<option value="Dentiste">Dentiste</option>
@@ -242,7 +191,7 @@
 
 							<div class="form-group">
 								<label>Disponibilite</label>
-								<select class="browser-default custom-select show-tick" name="Disponible"  th:required="required" th:value="${docteur.get().specialite}">
+								<select class="browser-default custom-select show-tick" name="Disponible"  th:required="required" th:value="${docteur.disponible}">
 									<option selected></option>
 									<option value="1">Disponible</option>
 									<option value="0">Indisponible</option>
@@ -273,42 +222,6 @@
 						<img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36" class="img-fluid">
 					</a>
 				</p>
-			</div>
-			<div class="col-lg-3 col-md-4">
-				<h5>About</h5>
-				<ul class="links">
-					<li><a href="#0">About us</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="#0">FAQ</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="register.html">Register</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-3 col-md-4">
-				<h5>Useful links</h5>
-				<ul class="links">
-					<li><a href="#0">Doctors</a></li>
-					<li><a href="#0">Clinics</a></li>
-					<li><a href="#0">Specialization</a></li>
-					<li><a href="#0">Join as a Doctor</a></li>
-					<li><a href="#0">Download App</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-3 col-md-4">
-				<h5>Contact with Us</h5>
-				<ul class="contacts">
-					<li><a href="tel://61280932400"><i class="icon_mobile"></i> + 61 23 8093 3400</a></li>
-					<li><a href="mailto:info@findoctor.com"><i class="icon_mail_alt"></i> help@findoctor.com</a></li>
-				</ul>
-				<div class="follow_us">
-					<h5>Follow us</h5>
-					<ul>
-						<li><a href="#0"><i class="social_facebook"></i></a></li>
-						<li><a href="#0"><i class="social_twitter"></i></a></li>
-						<li><a href="#0"><i class="social_linkedin"></i></a></li>
-						<li><a href="#0"><i class="social_instagram"></i></a></li>
-					</ul>
-				</div>
 			</div>
 		</div>
 		<!--/row-->

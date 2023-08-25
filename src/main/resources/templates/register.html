@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" >
 
 <head>
 	<meta charset="utf-8">
@@ -10,24 +10,24 @@
 	<title>FINDOCTOR - Find easily a doctor and book online an appointment</title>
 
 	<!-- Favicons-->
-	<link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/x-icon" href="../static/img/apple-touch-icon-57x57-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="../static/img/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="../static/img/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="../static/img/apple-touch-icon-144x144-precomposed.png">
+	<link rel="shortcut icon" th:href="@{img/favicon.ico}" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" th:href="@{img/apple-touch-icon-57x57-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" th:href="@{img/apple-touch-icon-72x72-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" th:href="@{img/apple-touch-icon-114x114-precomposed.png}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" th:href="@{img/apple-touch-icon-144x144-precomposed.png}">
     
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     
 	<!-- BASE CSS -->
-	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../static/css/style.css" rel="stylesheet">
-	<link href="../static/css/menu.css" rel="stylesheet">
-	<link href="../static/css/vendors.css" rel="stylesheet">
-	<link href="../static/css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+	<link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/menu.css}" rel="stylesheet">
+	<link th:href="@{css/vendors.css}" rel="stylesheet">
+	<link th:href="@{css/icon_fonts/css/all_icons_min.css}" rel="stylesheet">
     
 	<!-- YOUR CUSTOM CSS -->
-	<link href="../static/css/custom.css" rel="stylesheet">
+	<link th:href="@{css/custom.css}" rel="stylesheet">
 
 </head>
 
@@ -40,97 +40,42 @@
 		<div data-loader="circle-side"></div>
 	</div>
 	<!-- End Preload -->
-    
+
 	<header class="header_sticky">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-6">
-					<div id="logo">
-						<a href="index.html" title="Findoctor"><img src="../../../../../Envato%20Elements/html_menu_1/img/logo.png" data-retina="true" alt="" width="163" height="36"></a>
+					<div id="logo_home">
+						<h1><a th:href="@{index}" title="Findoctor">Findoctor</a></h1>
 					</div>
 				</div>
 				<nav class="col-lg-9 col-6">
 					<a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
 					<ul id="top_access">
-						<li id="user">
-							<a href="#0">
-								<figure><img src="http://via.placeholder.com/150x150.jpg" alt=""></figure>
-								Jhon Smith
-							</a>
-						</li>
+						<li><a th:href="@{patientLogin}"><i class="pe-7s-user"></i></a></li>
+						<li><a th:href="@{register}"><i class="pe-7s-add-user"></i></a></li>
 					</ul>
 					<div class="main-menu">
 						<ul>
 							<li class="submenu">
 								<a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
 								<ul>
-									<li><a href="index.html">Home Default</a></li>
-									<li><a href="EditDoctor.html">Home Version 2</a></li>
-									<li><a href="index-3.html">Home Version 3</a></li>
-									<li><a href="index-4.html">Home Version 4</a></li>
-									<li><a href="index-7.html">Home with Map</a></li>
-                                    <li><a href="index-6.html">Revolution Slider</a></li>
-									<li><a href="index-5.html">With Cookie Bar (EU law)</a></li>
+									<li><a th:href="@{list}">Trouver tous les médecins disponibles</a></li>
+									<li><a th:href="@{DoctorForm}">Gestion des médecins</a></li>
+									<li><a th:href="@{register}">Sign up as a patient</a></li>
+									<li><a th:href="@{register-doctor}">Admin Registration</a> </li>
+									<li><a th:href="@{patientLogin}">Login d'un patient</a> </li>
+									<li><a th:href="@{ListAdmin}">Liste d'admin</a> </li>
 								</ul>
 							</li>
-							<li class="submenu">
-								<a href="#0" class="show-submenu">Pages<i class="icon-down-open-mini"></i></a>
-								<ul>
-									<li class="third-level"><a href="#0">List pages</a>
-										<ul>
-                                            <li><a href="list.html">List page</a></li>
-											<li><a href="grid-list.html">List grid page</a></li>
-											<li><a href="list-map.html">List map page</a></li>
-                                        </ul>
-									</li>
-									<li class="third-level"><a href="#0">Detail pages</a>
-										<ul>
-                                            <li><a href="detail-page.html">Detail page 1</a></li>
-                                            <li><a href="detail-page-2.html">Detail page 2</a></li>
-                                    		<li><a href="detail-page-3.html">Detail page 3</a></li>
-											<li><a href="detail-page-working-booking.html">Detail working booking</a></li>
-                                        </ul>
-									</li>
-									<li><a href="submit-review.html">Submit Review</a></li>
-									<li><a href="blog-1.html">Blog</a></li>
-									<li><a href="badges.html">Badges</a></li>
-									<li><a href="login.html">Login</a></li>
-									<li><a href="login-2.html">Login 2</a></li>
-									<li><a href="register-doctor.html">Register Doctor</a></li>
-									<li><a href="register-doctor-working.html">Working doctor register</a></li>
-									<li><a href="register.html">Register</a></li>
-									<li><a href="about.html">About Us</a></li>
-									<li><a href="contacts.html">Contacts</a></li>
-								</ul>
-							</li>
-							<li class="submenu">
-								<a href="#0" class="show-submenu">Extra Elements<i class="icon-down-open-mini"></i></a>
-								<ul>
-                                    <li><a href="booking-page.html">Booking page</a></li>
-                                    <li><a href="confirm.html">Confirm page</a></li>
-                                	<li><a href="faq.html">Faq page</a></li>
-                                    <li><a href="../../../../../Envato%20Elements/html_menu_1/coming_soon/index.html">Coming soon</a></li>
-									<li class="third-level"><a href="#0">Pricing tables</a>
-										<ul>
-											<li><a href="pricing-tables-3.html">Pricing tables 1</a></li>
-                                    		<li><a href="pricing-tables.html">Pricing tables 2</a></li>
-                                    		<li><a href="pricing-tables-2.html">Pricing tables 3</a></li>
-										</ul>
-									</li>
-									<li><a href="icon-pack-1.html">Icon pack 1</a></li>
-									<li><a href="icon-pack-2.html">Icon pack 2</a></li>
-									<li><a href="icon-pack-3.html">Icon pack 3</a></li>
-									<li><a href="404.html">404 page</a></li>
-								</ul>
-							</li>
-							<li><a href="#0">Buy this template</a></li>
+
 						</ul>
 					</div>
 					<!-- /main-menu -->
 				</nav>
 			</div>
 		</div>
-		<!-- container -->
+		<!-- /container -->
 	</header>
 	<!-- /Header -->
 	
@@ -138,40 +83,54 @@
 		<div class="bg_color_2">
 			<div class="container margin_60_35">
 				<div id="register">
-					<h1>Please register to Findoctor!</h1>
+					<h1>Veuillez vous inscrire à Finddoctor!</h1>
 					<div class="row justify-content-center">
 						<div class="col-md-5">
-							<form>
+							<form th:action="@{SignUp}" method="post">
 								<div class="box_form">
 									<div class="form-group">
-										<label>Name</label>
-										<input type="text" class="form-control" placeholder="Your name">
+										<label for="nom">Nom</label>
+										<input type="text" name="nom" id="nom" class="form-control" th:required="required" placeholder="Votre nom">
 									</div>
 									<div class="form-group">
-										<label>Last name</label>
-										<input type="text" class="form-control" placeholder="Your last name">
+										<label for="prenom">Prenom</label>
+										<input type="text" class="form-control" id="prenom" name="prenom" th:required="required" placeholder="Votre prenom">
 									</div>
 									<div class="form-group">
-										<label>Email</label>
-										<input type="email" class="form-control" placeholder="Your email address">
+										<label for="adresse">Adresse</label>
+										<input type="text" class="form-control" id="adresse" name="adresse" th:required="required" placeholder="Votre adresse">
+									</div>
+
+									<div class="form-group">
+										<label for="telephone">Telephone</label>
+										<input type="tel" class="form-control" id="telephone" name="telephone" th:required="required" placeholder="Votre telephone">
 									</div>
 									<div class="form-group">
-										<label>Password</label>
-										<input type="password" class="form-control" id="password1" name="password1" placeholder="Your password">
+										<label>Cnss</label>
+										<select class="browser-default custom-select show-tick" name="cnss" th:required="required" >
+											<option selected></option>
+											<option value="1" >Oui</option>
+											<option value="0" >Non</option>
+										</select>
 									</div>
 									<div class="form-group">
-										<label>Confirm password</label>
-										<input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password">
+										<label for="email">Email</label>
+										<input type="email" class="form-control" id="email" name="email" th:required="required" placeholder="Votre email ">
 									</div>
+									<div class="form-group">
+										<label for="Password">Password</label>
+										<input type="password" class="form-control" id="Password" th:required="required" name="password" placeholder="Votre mot de passe">
+									</div>
+
 									<div id="pass-info" class="clearfix"></div>
 									<div class="checkbox-holder text-left">
 										<div class="checkbox_2">
 											<input type="checkbox" value="accept_2" id="check_2" name="check_2" checked>
-											<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+											<label for="check_2"><span>J'accepte les <strong>termes et conditions</strong></span></label>
 										</div>
 									</div>
 									<div class="form-group text-center add_top_30">
-										<input class="btn_1" type="submit" value="Submit">
+										<input class="btn_1" type="submit" value="s'inscrire">
 									</div>
 								</div>
 								<p class="text-center"><small>Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet. Eum no atqui putant democritum, velit nusquam sententiae vis no.</small></p>
@@ -185,14 +144,14 @@
 		</div>
 	</main>
 	<!-- /main -->
-	
+
 	<footer>
 		<div class="container margin_60_35">
 			<div class="row">
 				<div class="col-lg-3 col-md-12">
 					<p>
-						<a href="index.html" title="Findoctor">
-							<img src="../../../../../Envato%20Elements/html_menu_1/img/logo.png" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+						<a th:href="@{index}" title="Findoctor">
+							<img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36" class="img-fluid">
 						</a>
 					</p>
 				</div>
@@ -202,7 +161,7 @@
 						<li><a href="#0">About us</a></li>
 						<li><a href="blog.html">Blog</a></li>
 						<li><a href="#0">FAQ</a></li>
-						<li><a href="login.html">Login</a></li>
+						<li><a href="SignIn.html">Login</a></li>
 						<li><a href="register.html">Register</a></li>
 					</ul>
 				</div>
@@ -243,7 +202,7 @@
 					</ul>
 				</div>
 				<div class="col-md-4">
-					<div id="copy">© 2017 Findoctor</div>
+					<div id="copy">© 2023 Ehei</div>
 				</div>
 			</div>
 		</div>
@@ -254,11 +213,11 @@
 	<!-- Back to top button -->
 
 	<!-- COMMON SCRIPTS -->
-	<script src="../../../../../Envato%20Elements/html_menu_1/js/jquery-2.2.4.min.js"></script>
-	<script src="../../../../../Envato%20Elements/html_menu_1/js/common_scripts.min.js"></script>
-	<script src="../../../../../Envato%20Elements/html_menu_1/js/functions.js"></script>
+	<script th:src="@{js/jquery-2.2.4.min.js}"></script>
+	<script th:src="@{js/common_scripts.min.js}"></script>
+	<script th:src="@{js/functions.js}"></script>
      
 	<!-- SPECIFIC SCRIPTS -->
-	<script src="../../../../../Envato%20Elements/html_menu_1/js/pw_strenght.js"></script>
+	<script th:src="@{js/pw_strenght.js}"></script>
 </body>
 </html>

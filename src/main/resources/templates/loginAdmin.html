@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Find easily a doctor and book online an appointment">
+  <meta name="author" content="Ansonika">
+  <title>FINDOCTOR - Find easily a doctor and book online an appointment</title>
+
+  <!-- Favicons-->
+  <link rel="shortcut icon" th:href="@{img/favicon.ico}" type="image/x-icon">
+  <link rel="apple-touch-icon" type="image/x-icon" th:href="@{img/apple-touch-icon-57x57-precomposed.png}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" th:href="@{img/apple-touch-icon-72x72-precomposed.png}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" th:href="@{img/apple-touch-icon-114x114-precomposed.png}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" th:href="@{img/apple-touch-icon-144x144-precomposed.png}">
+
+  <!-- GOOGLE WEB FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+
+  <!-- BASE CSS -->
+  <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{css/style.css}" rel="stylesheet">
+  <link th:href="@{css/menu.css}" rel="stylesheet">
+  <link th:href="@{css/vendors.css}" rel="stylesheet">
+  <link th:href="@{css/icon_fonts/css/all_icons_min.css}" rel="stylesheet">
+
+  <!-- YOUR CUSTOM CSS -->
+  <link th:href="@{css/custom.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="layer"></div>
+<!-- Mobile menu overlay mask -->
+
+<div id="preloader">
+  <div data-loader="circle-side"></div>
+</div>
+<!-- End Preload -->
+
+<header class="header_sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-6">
+        <div id="logo_home">
+          <h1><a th:href="@{index}" title="Findoctor">Findoctor</a></h1>
+        </div>
+      </div>
+      <nav class="col-lg-9 col-6">
+        <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
+        <ul id="top_access">
+          <li><a th:href="@{patientLogin}"><i class="pe-7s-user"></i></a></li>
+          <li><a th:href="@{register}"><i class="pe-7s-add-user"></i></a></li>
+        </ul>
+        <div class="main-menu">
+          <ul>
+            <li class="submenu">
+              <a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
+              <ul>
+                <li><a th:href="@{list}">Trouver tous les médecins disponibles</a></li>
+                <li><a th:href="@{DoctorForm}">Gestion des médecins</a></li>
+                <li><a th:href="@{register}">Sign up as a patient</a></li>
+                <li><a th:href="@{register-doctor}">Admin Registration</a> </li>
+                <li><a th:href="@{patientLogin}">Login d'un patient</a> </li>
+                <li><a th:href="@{ListAdmin}">Liste d'admin</a> </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        <!-- /main-menu -->
+      </nav>
+    </div>
+  </div>
+  <!-- /container -->
+</header>
+<!-- /header -->
+
+<main>
+  <div class="bg_color_2">
+    <div class="container margin_60_35">
+      <div id="login">
+        <h1>Please login to Findoctor AS ADMIN!</h1>
+        <div class="box_form">
+          <form th:action="@{/authentificateAdmin}">
+            <div class="form-group">
+              <input type="text" class="form-control" name="login" placeholder="username">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Your password" name="password" id="password">
+            </div>
+            <div class="form-group text-center add_top_20">
+              <input class="btn_1 medium" type="submit" value="Login">
+            </div>
+          </form>
+        </div>
+        <p class="text-center link_bright">Autant qu'un patient? <a th:href="@{patientLogin}"><strong> Login !</strong></a></p>
+      </div>
+      <!-- /login -->
+    </div>
+  </div>
+</main>
+<!-- /main -->
+
+<footer>
+  <div class="container margin_60_35">
+    <div class="row">
+      <div class="col-lg-3 col-md-12">
+        <p>
+          <a th:href="@{index}" title="Findoctor">
+            <img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+          </a>
+        </p>
+      </div>
+    </div>
+    <!--/row-->
+    <hr>
+    <div class="row">
+      <div class="col-md-8">
+        <ul id="additional_links">
+          <li><a href="#0">Terms and conditions</a></li>
+          <li><a href="#0">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div id="copy">© 2023 Ehei</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/footer-->
+
+<div id="toTop"></div>
+<!-- Back to top button -->
+
+<!-- COMMON SCRIPTS -->
+<script th:src="@{js/jquery-2.2.4.min.js}"></script>
+<script th:src="@{js/common_scripts.min.js}"></script>
+<script th:src="@{js/functions.js}"></script>
+
+
+</body>
+</html>

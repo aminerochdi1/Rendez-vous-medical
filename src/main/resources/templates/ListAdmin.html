@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Find easily a doctor and book online an appointment">
+  <meta name="author" content="Ansonika">
+  <title>FINDOCTOR</title>
+
+  <!-- Favicons-->
+  <link rel="shortcut icon" th:href="@{img/favicon.ico}" type="image/x-icon">
+  <link rel="apple-touch-icon" type="image/x-icon" th:href="@{img/apple-touch-icon-57x57-precomposed.png}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" th:href="@{img/apple-touch-icon-72x72-precomposed.png}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" th:href="@{img/apple-touch-icon-114x114-precomposed.png}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" th:href="@{img/apple-touch-icon-144x144-precomposed.png}">
+
+  <!-- GOOGLE WEB FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+
+  <!-- BASE CSS -->
+  <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{css/style.css}" rel="stylesheet">
+  <link th:href="@{css/menu.css}" rel="stylesheet">
+  <link th:href="@{css/vendors.css}" rel="stylesheet">
+  <link th:href="@{css/icon_fonts/css/all_icons_min.css}" rel="stylesheet">
+
+  <!-- SPECIFIC CSS -->
+  <link th:href="@{css/date_picker.css}" rel="stylesheet">
+
+  <!-- YOUR CUSTOM CSS -->
+  <link th:href="@{css/custom.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="layer"></div>
+<!-- Mobile menu overlay mask -->
+<!--
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div>
+     End Preload -->
+
+<header class="header_sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-6">
+        <div id="logo_home">
+          <h1><a th:href="@{index}" title="Findoctor">Findoctor</a></h1>
+        </div>
+      </div>
+      <nav class="col-lg-9 col-6">
+        <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
+        <ul id="top_access">
+          <li><a th:href="@{patientLogin}"><i class="pe-7s-user"></i></a></li>
+          <li><a th:href="@{register}"><i class="pe-7s-add-user"></i></a></li>
+        </ul>
+        <div class="main-menu">
+          <ul>
+            <li class="submenu">
+              <a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
+              <ul>
+                <li><a th:href="@{list}">Trouver tous les médecins disponibles</a></li>
+                <li><a th:href="@{DoctorForm}">Gestion des médecins</a></li>
+                <li><a th:href="@{register}">Sign up as a patient</a></li>
+                <li><a th:href="@{register-doctor}">Admin Registration</a> </li>
+                <li><a th:href="@{patientLogin}">Login d'un patient</a> </li>
+                <li><a th:href="@{ListAdmin}">Liste d'admin</a> </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        <!-- /main-menu -->
+      </nav>
+    </div>
+  </div>
+  <!-- /container -->
+</header>
+<!-- /header -->
+<!-- /Header -->
+
+<main>
+  <div id="results">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4><strong>Liste des docteurs</strong></h4>
+          <small><a th:href="@{DoctorForm}">Ajouter un docteur</a>
+          </small>
+        </div>
+        <!-- Recherche des docteur par specialite -->
+        <div class="col-md-6">
+          <div class="search_bar_list">
+            <form th:action="@{list}" method="get">
+              <input type="text" class="form-control" name="Keyword" th:value="${Keyword}" placeholder="Ex : Spécialisation ....">
+              <input type="submit" value="Chercher">
+            </form>
+          </div>
+          <!--
+          /recherche
+       -->
+        </div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /results -->
+
+
+
+  <div class="container margin_60_35">
+    <div class="container">
+      <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+        <tr>
+          <th>Adresse</th>
+          <th>Email</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Ville</th>
+          <th>Specialite</th>
+          <th>Disponibilite</th>
+          <th>	 </th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+          <!-- traverser auto a la vue les nouvelles atrributs -->
+        <tr th:each="d: ${listDocteurs}">
+          <td th:text="${d.adresse}"></td>
+          <td th:text="${d.email}"></td>
+          <td th:text="${d.nom}"></td>
+          <td th:text="${d.prenom}"></td>
+          <td th:text="${d.ville}"></td>
+          <td th:text="${d.specialite}"></td>
+          <td>
+            <span th:if="${d.disponible}"><img height="24" width="24" th:src="@{img/available-icon.jpg}"></span>
+            <span th:unless="${d.disponible}"><img height="24" width="24" th:src="@{img/unavailable-icon.jpg}"></span>
+          </td>
+
+          <td>
+            <a th:href="@{/edit(id=${d.id})}">Modifier</a>
+          </td>
+
+          <td><a onclick="return confirm('Are you sure you want to delete this item?');" th:href="@{delete(id=${d.id})}">Supprimer</a></td>
+        </tr>
+        </tbody>
+
+      </table>
+      <!--<ul>
+          <li><a href="detail-page.html">Book now</a></li>
+          </ul>
+      -->
+
+
+      <!--
+      <div class="strip_list wow fadeIn">
+      </div>
+      /strip_list -->
+
+      <nav aria-label="" class="add_top_20">
+        <ul class="pagination pagination-sm">
+
+          <li th:each="pa,status:${pages}" class="page-item"  >
+            <a th:href="@{list(page=${status.index},Keyword=${Keyword})}" th:text="${status.index}" class="page-link" ></a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- /pagination -->
+    </div>
+
+  </div>
+  </div>
+  <!-- /row -->
+
+  <!-- /container -->
+</main>
+<!-- /main -->
+<footer>
+  <div class="container margin_60_35">
+    <div class="row">
+      <div class="col-lg-3 col-md-12">
+        <p>
+          <a th:href="@{index}" title="Findoctor">
+            <img th:src="@{img/logo.png}" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+          </a>
+        </p>
+      </div>
+    </div>
+    <!--/row-->
+    <hr>
+    <div class="row">
+      <div class="col-md-8">
+        <ul id="additional_links">
+          <li><a href="#0">Terms and conditions</a></li>
+          <li><a href="#0">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div id="copy">© 2023 Ehei</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/footer-->
+
+<div id="toTop"></div>
+<!-- Back to top button -->
+
+<!-- COMMON SCRIPTS -->
+<script th:src="@{js/jquery-2.2.4.min.js}"></script>
+<script th:src="@{js/common_scripts.min.js}"></script>
+<script th:src="@{js/functions.js}"></script>
+</body>
+</html>

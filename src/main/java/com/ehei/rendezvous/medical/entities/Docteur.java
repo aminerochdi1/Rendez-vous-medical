@@ -1,21 +1,17 @@
 package com.ehei.rendezvous.medical.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-
 public class Docteur implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(name = "Id")
     private long id;
     @NotNull
     @Column(length = 15)
@@ -35,6 +31,9 @@ public class Docteur implements Serializable {
     @NotNull
     private String specialite;
 
+    // ONE TO MANY
+    @OneToMany(mappedBy="docteur",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<RendezVous> rendezVousCollection;
 
     public Boolean getDisponible() {
         return Disponible;
@@ -55,7 +54,6 @@ public class Docteur implements Serializable {
     public void setVille(String ville) {
         Ville = ville;
     }
-
 
 
     public long getId() {
@@ -108,8 +106,8 @@ public class Docteur implements Serializable {
 
 
 
-
     public Docteur() {
+
     }
 
     public Docteur(String nom, String prenom, String Ville,String adresse, String email, String specialite, Boolean Disponible) {
