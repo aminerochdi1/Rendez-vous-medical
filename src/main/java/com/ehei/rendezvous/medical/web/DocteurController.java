@@ -43,6 +43,32 @@ public class DocteurController {
         return "ListFiltre";
     }
 
+    // FILTRER PAR VILLE
+
+    @RequestMapping(value = "/ListFiltreByVille")
+    // @ModelAttribute
+    public String DoctorsFilterByVille(Model model,String ville,
+                                 @RequestParam(name = "page",defaultValue = "0") int p,
+                                 @RequestParam(name = "size",defaultValue = "10") int s ,
+                                 @RequestParam(name = "ville",defaultValue = "") String mc
+    )
+    {
+        // PAGINATION des docteurs
+        Page<Docteur> docteurPage;
+        docteurPage = docteurRepository.chercherParVille(ville,PageRequest.of(p, s));
+        System.out.println("--------------------");
+        System.out.println("---------la specialite-----------");
+        System.out.println(ville);
+        System.out.println("--------------------");
+        model.addAttribute("listDocteurs",docteurPage.getContent());
+        int[] pages=new int[docteurPage.getTotalPages()];
+        model.addAttribute("pages",pages);
+        // model.addAttribute("size",s);
+        //  model.addAttribute("pageCourante",p);
+        //nom de la vue
+        return "ListFiltre";
+    }
+
 
 
 
